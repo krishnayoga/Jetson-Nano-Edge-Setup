@@ -2,37 +2,37 @@
 
 ## Install dependencies
 ```
-1. sudo apt-get -y update && sudo apt-get -y upgrade
-2. sudo apt-get install python3-pip curl nano build-essential gcc g++ make ufw
-3. pip install --upgrade pip
-4. pip install numpy matplotlib scikit-learn PyMongo
+sudo apt-get -y update && sudo apt-get -y upgrade
+sudo apt-get install python3-pip curl nano build-essential gcc g++ make ufw
+pip install --upgrade pip
+pip install numpy matplotlib scikit-learn PyMongo
 ```
 
 ### If facing /var/lib/apt/lists/lock problem
 ```
-1. sudo rm-ref /var/lib/apt/lists/lock
-2. sudo apt-get -y update && sudo apt-get -y upgrade
+sudo rm-ref /var/lib/apt/lists/lock
+sudo apt-get -y update && sudo apt-get -y upgrade
 ```
 
 ## Install tensorflow
 ### Based on NVIDIA official website
 ```
-1. sudo apt-get update
-2. sudo apt-get install libhdf5-serial-dev hdf5-tools libhdf5-dev zlib1g-dev zip libjpeg8-dev liblapack-dev libblas-dev gfortran
-3. sudo apt-get install python3-pip
-4. sudo pip3 install -U pip testresources setuptools==49.6.0
-5. sudo pip3 install -U numpy==1.19.4 future==0.18.2 mock==3.0.5 h5py==2.10.0 keras_preprocessing==1.1.1 keras_applications==1.0.8 gast==0.2.2 futures protobuf pybind11
-6. sudo pip3 install --pre --extra-index-url https://developer.download.nvidia.com/compute/redist/jp/v46 tensorflow
+sudo apt-get update
+sudo apt-get install libhdf5-serial-dev hdf5-tools libhdf5-dev zlib1g-dev zip libjpeg8-dev liblapack-dev libblas-dev gfortran
+sudo apt-get install python3-pip
+sudo pip3 install -U pip testresources setuptools==49.6.0
+sudo pip3 install -U numpy==1.19.4 future==0.18.2 mock==3.0.5 h5py==2.10.0 keras_preprocessing==1.1.1 keras_applications==1.0.8 gast==0.2.2 futures protobuf pybind11
+sudo pip3 install --pre --extra-index-url https://developer.download.nvidia.com/compute/redist/jp/v46 tensorflow
 ```
 
 ## Install mosquitto
 ### Installing mosquitto
 ```
-1. sudo apt-add-repository ppa:mosquitto-dev/mosquitto-ppa
-2. sudo apt-get update
-3. sudo apt-get install mosquitto
-4. sudo apt-get install mosquitto-clients
-5. sudo apt clean
+sudo apt-add-repository ppa:mosquitto-dev/mosquitto-ppa
+sudo apt-get update
+sudo apt-get install mosquitto
+sudo apt-get install mosquitto-clients
+sudo apt clean
 ```
 
 ### Configuring mosquitto bridge connection
@@ -47,17 +47,17 @@ mosquitto_sub -t '#'
 ## Install mongoDB
 ### Install mongoDb v4.2
 ```
-1. wget -qO - https://www.mongodb.org/static/pgp/server-4.2.asc | sudo apt-key add -
-2. echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.2.list
-3. sudo apt-get update
-4. sudo apt-get install -y mongodb-org=4.2.15 mongodb-org-server=4.2.15 mongodb-org-shell=4.2.15 mongodb-org-mongos=4.2.15 mongodb-org-tools=4.2.15
+wget -qO - https://www.mongodb.org/static/pgp/server-4.2.asc | sudo apt-key add -
+echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.2.list
+sudo apt-get update
+sudo apt-get install -y mongodb-org=4.2.15 mongodb-org-server=4.2.15 mongodb-org-shell=4.2.15 mongodb-org-mongos=4.2.15 mongodb-org-tools=4.2.15
 ```
 
 ### Start mongoDB service
 ```
-1. sudo systemctl daemon-reload
-2. sudo systemctl start mongod
-3. sudo systemctl status mongod
+sudo systemctl daemon-reload
+sudo systemctl start mongod
+sudo systemctl status mongod
 ```
 
 ### Create database on mongoDB
