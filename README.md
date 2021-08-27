@@ -3,7 +3,7 @@
 ## Install dependencies
 ```
 sudo apt-get -y update && sudo apt-get -y upgrade
-sudo apt-get install python3-pip curl nano build-essential gcc g++ make ufw
+sudo apt-get install python3-pip curl nano build-essential gcc g++ make ufw git
 pip install --upgrade pip
 pip install numpy matplotlib scikit-learn PyMongo
 ```
