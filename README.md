@@ -131,6 +131,25 @@ node-red
 4. On the right side, find import
 5. Import the files inside /home/jetson/.nodered
 
+### Run node-red on startup
+```
+sudo npm install -g pm2
+pm2 start /usr/bin/node-red --node-args="--max-old-space-size=256" -- -v
+pm2 save
+pm2 startup systemd
+follow the command
+reboot
+```
+
+## Enable VNC
+```
+cd /usr/lib/systemd/user/graphical-session.target.wants
+sudo ln -s ../vino-server.service ./.
+gsettings set org.gnome.Vino prompt-enabled false
+gsettings set org.gnome.Vino require-encryption false
+reboot
+```
+
 ## Check the port
 1. mongoDB port
 ```
