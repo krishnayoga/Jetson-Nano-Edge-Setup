@@ -3,9 +3,9 @@
 ## Install dependencies
 ```
 1. sudo apt-get -y update && sudo apt-get -y upgrade
-2. sudo apt-get install python3-pip
+2. sudo apt-get install python3-pip curl nano build-essential gcc g++ make ufw
 3. pip install --upgrade pip
-4. pip install numpy matplotlib nano build-essential scikit-learn PyMongo
+4. pip install numpy matplotlib scikit-learn PyMongo
 ```
 
 ### If facing /var/lib/apt/lists/lock problem
@@ -95,4 +95,48 @@ sudo chmod +x /usr/local/bin/db_node.sh
 ```
 sudo systemctl enable edge_server.service
 sudo systemctl start edge_server.service
+```
+
+### Remove mongodb
+```
+sudo apt-get purge mongodb*
+```
+
+## Install node-red
+### Install node.js v16
+```
+curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+sudo apt-get install -y nodejs
+```
+
+### Install node-red
+```
+sudo npm install -g --unsafe-perm node-red node-red-admin
+```
+
+### Allow port use
+```
+sudo ufw allow 1880
+```
+
+### Run node-red
+```
+node-red
+```
+
+### Load flow files
+1. Download from the drive, open node-red folder
+2. Copy all files to /home/jetson/.nodered
+3. Open browser, go to 127.0.0.1:1880
+4. On the right side, find import
+5. Import the files inside /home/jetson/.nodered
+
+## Check the port
+1. mongoDB port
+```
+netstat -n | grep 27017
+```
+2. MQTT port
+```
+netstat -n | grep 1883
 ```
